@@ -1,0 +1,10 @@
+file 'motd' do
+  nodePlatform = node['platform']
+  if nodePlatform == 'centos'
+     path '/home/vagrant/motd.txt'
+  else if nodePlatform == 'win'
+     path 'C:\labs\motd.txt'
+   end 
+  content "Message of day"
+  action :create
+end
